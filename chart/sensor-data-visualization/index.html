@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Dynamic Interval Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Basic body styling for centering */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Font styling */
+            background-color: #f9f9f9; /* Light background color */
+        }
+
+        /* Dropdown menu styling */
+        #intervalDropdown {
+            padding: 10px; /* Add padding for better touch response */
+            font-size: 16px; /* Font size for readability */
+            margin-bottom: 20px; /* Space below the dropdown */
+            border: 1px solid #ccc; /* Border styling */
+            border-radius: 4px; /* Rounded corners */
+            background-color: white; /* White background */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: border-color 0.3s; /* Smooth border color transition */
+        }
+
+        /* Button styling */
+        .sensorBtn {
+            padding: 10px 15px; /* Button padding */
+            margin: 5px; /* Space between buttons */
+            border: none; /* Remove default border */
+            border-radius: 4px; /* Rounded corners */
+            color: white; /* White text */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+            transition: background-color 0.3s; /* Smooth background color transition */
+        }
+
+        /* SVG styling for better presentation */
+        svg {
+            border: 1px solid #ccc; /* Optional: border around the chart */
+            background-color: #ffffff; /* White background for the SVG */
+            border-radius: 4px; /* Rounded corners for SVG */
+        }
+
+        /* Line styling */
+        .sensorLine {
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: 100px;
+            height: auto;
+            padding: 5px;
+            font: 12px sans-serif;
+            background: rgb(94, 142, 203);
+            border: 0px;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0; /* Start with tooltip hidden */
+        }
+    </style>
+</head>
+<body>
+
+    <select id="intervalDropdown">
+        <option value="5min">5 Min</option>
+        <option value="15min">15 Min</option>
+        <option value="1hour">1 Hour</option>
+        <option value="1day">1 Day</option>
+        <option value="1year">1 Year</option>
+    </select>
+
+    <div id="sensorButtons">
+        <!-- Buttons will be generated here -->
+    </div>
+
+    <svg id="chart"></svg>
+
+    <script src="chart.js"></script>
+</body>
+</html>

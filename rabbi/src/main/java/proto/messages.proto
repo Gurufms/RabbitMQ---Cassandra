@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package your.package;
+
+message Historical {
+    int64 batchid = 1;
+    string sensor = 2;
+    repeated HistoricalValue values = 3;
+}
+
+message HistoricalValue {
+    int64 t = 1;
+    double v = 2;
+}
+
+message Universal {
+    repeated int32 type = 1;
+    repeated bytes messages = 2;
+}
